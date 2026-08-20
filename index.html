@@ -1,423 +1,41 @@
-html
+```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jersey Sport</title>
-
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f5f6f8;
-color:#111;
-}
-
-header{
-background:#fff;
-position:sticky;
-top:0;
-z-index:100;
-box-shadow:0 2px 12px rgba(0,0,0,.08);
-}
-
-.navbar{
-max-width:1200px;
-margin:auto;
-height:82px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:10px 20px;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-font-size:25px;
-font-weight:900;
-font-style:italic;
-}
-
-.logo-icon{
-width:55px;
-height:55px;
-border-radius:50%;
-background:linear-gradient(135deg,#e90000,#ffd500,#0757c9);
-border:4px solid #111;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-font-size:20px;
-}
-
-.nav-actions{
-display:flex;
-align-items:center;
-gap:8px;
-}
-
-.icon-btn{
-width:48px;
-height:48px;
-border:0;
-background:#fff;
-font-size:25px;
-cursor:pointer;
-border-radius:12px;
-}
-
-.cart-btn{position:relative}
-
-.cart-count{
-position:absolute;
-top:-3px;
-right:-3px;
-width:22px;
-height:22px;
-border-radius:50%;
-background:#0797d0;
-color:#fff;
-font-size:12px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:bold;
-}
-
-.search-box{
-display:none;
-padding:12px 20px;
-border-top:1px solid #eee;
-}
-
-.search-box input{
-width:100%;
-padding:14px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-}
-
-.hero{
-background:
-radial-gradient(circle at 15% 20%,#5422bd,transparent 30%),
-radial-gradient(circle at 85% 70%,#008fc5,transparent 35%),
-linear-gradient(135deg,#080914,#16102e);
-color:#fff;
-text-align:center;
-padding:70px 20px;
-}
-
-.hero h1{
-font-size:48px;
-font-weight:900;
-letter-spacing:3px;
-margin-bottom:12px;
-}
-
-.hero p{
-font-size:20px;
-margin-bottom:28px;
-}
-
-.hero-btn{
-display:inline-block;
-background:#12c98b;
-color:#fff;
-padding:15px 28px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:35px 20px;
-}
-
-.section-title{
-text-align:center;
-font-size:32px;
-margin:15px 0 28px;
-}
-
-.categories{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
-margin-bottom:55px;
-}
-
-.category{
-background:#fff;
-border-radius:16px;
-padding:18px;
-text-align:center;
-box-shadow:0 3px 12px rgba(0,0,0,.08);
-cursor:pointer;
-}
-
-.category-image{
-height:170px;
-border-radius:10px;
-background:linear-gradient(135deg,#edf1f5,#d9dee5);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:80px;
-margin-bottom:15px;
-}
-
-.category h3{
-font-size:19px;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
-}
-
-.product{
-background:#fff;
-border-radius:18px;
-overflow:hidden;
-box-shadow:0 3px 15px rgba(0,0,0,.09);
-}
-
-.product-image{
-height:240px;
-background:linear-gradient(135deg,#dcecff,#b8f3d9);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:100px;
-}
-
-.product-info{
-padding:18px;
-}
-
-.product h3{
-font-size:20px;
-margin-bottom:8px;
-}
-
-.price{
-font-size:27px;
-font-weight:900;
-color:#078c7c;
-margin-bottom:12px;
-}
-
-.sizes{
-color:#666;
-margin-bottom:15px;
-}
-
-.add-btn,
-.whatsapp-btn{
-width:100%;
-border:0;
-padding:14px;
-border-radius:10px;
-font-size:15px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.add-btn{
-background:#111;
-color:#fff;
-}
-
-.whatsapp-btn{
-background:#25d366;
-color:#fff;
-margin-top:9px;
-}
-
-.cart-panel{
-position:fixed;
-right:-430px;
-top:0;
-width:400px;
-max-width:95%;
-height:100vh;
-background:#fff;
-z-index:300;
-box-shadow:-5px 0 20px rgba(0,0,0,.2);
-padding:25px;
-transition:.3s;
-overflow:auto;
-}
-
-.cart-panel.open{right:0}
-
-.cart-header{
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin-bottom:25px;
-}
-
-.close{
-border:0;
-background:none;
-font-size:30px;
-
-cursor:pointer;
-}
-
-.cart-item{
-border-bottom:1px solid #ddd;
-padding:15px 0;
-}
-
-.cart-item strong{
-display:block;
-margin-bottom:7px;
-}
-
-.remove-btn{
-margin-top:8px;
-border:0;
-background:#eee;
-padding:7px 12px;
-border-radius:6px;
-cursor:pointer;
-}
-
-.cart-total{
-font-size:24px;
-font-weight:bold;
-margin:25px 0;
-}
-
-.checkout,
-.checkout-whatsapp{
-width:100%;
-border:0;
-padding:15px;
-border-radius:10px;
-font-weight:bold;
-font-size:15px;
-cursor:pointer;
-}
-
-.checkout{
-background:#111;
-color:#fff;
-margin-bottom:10px;
-}
-
-.checkout-whatsapp{
-background:#25d366;
-color:#fff;
-}
-
-.empty{
-text-align:center;
-color:#777;
-padding:30px 0;
-}
-
-footer{
-background:#111;
-color:#fff;
-text-align:center;
-padding:35px 20px;
-margin-top:50px;
-}
-
-footer h2{
-margin-bottom:10px;
-}
-
-footer p{
-margin-top:8px;
-}
-
-@media(max-width:600px){
-
-.navbar{
-height:75px;
-padding:8px 12px;
-}
-
-.logo{
-font-size:19px;
-}
-
-.logo-icon{
-width:45px;
-height:45px;
-}
-
-.hero{
-padding:55px 18px;
-}
-
-.hero h1{
-font-size:36px;
-}
-
-.hero p{
-font-size:17px;
-}
-
-.categories,
-.products{
-grid-template-columns:repeat(2,1fr);
-gap:14px;
-}
-
-.category{
-padding:10px;
-}
-
-.category-image{
-height:140px;
-font-size:65px;
-}
-
-.category h3{
-font-size:16px;
-}
-
-.product-image{
-height:180px;
-font-size:70px;
-}
-
-.product-info{
-padding:14px;
-}
-
-.product h3{
-font-size:17px;
-}
-
-.price{
-font-size:22px;
-}
-
-.sizes{
-font-size:14px;
-}
-
-.add-btn,
-.whatsapp-btn{
-font-size:13px;
-padding:12px 5px;
-}
-
+body{font-family:Arial,sans-serif;background:#f5f5f5;color:#111}
+header{background:#fff;padding:20px 18px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;box-shadow:0 2px 10px #0001}
+.logo{font-size:25px;font-weight:900;color:#111}
+.logo span{color:#e31b23}
+.menu{font-size:30px}
+.hero{background:linear-gradient(135deg,#071b36,#1166a8);color:#fff;text-align:center;padding:55px 20px}
+.hero h1{font-size:42px;margin-bottom:12px}
+.hero p{font-size:18px}
+.container{max-width:1100px;margin:auto;padding:35px 18px}
+h2{text-align:center;font-size:30px;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #0001;text-align:center}
+.category{height:210px;background:#eee;display:flex;align-items:center;justify-content:center;font-size:75px}
+.card h3{padding:18px 10px;font-size:19px}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.product{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 3px 12px #0001}
+.product-img{height:260px;background:linear-gradient(135deg,#dff4ff,#d8fff1);display:flex;align-items:center;justify-content:center;font-size:100px}
+.product-info{padding:20px}
+.product-info h3{font-size:21px;margin-bottom:10px}
+.price{font-size:25px;font-weight:bold;color:#008f7a;margin-bottom:10px}
+.sizes{color:#666;margin-bottom:15px}
+button{border:0;border-radius:10px;padding:15px;width:100%;background:#10b981;color:#fff;font-size:17px;font-weight:bold;cursor:pointer}
+.whatsapp{margin-top:35px;background:#25d366;color:#fff;padding:25px;border-radius:15px;text-align:center}
+.whatsapp h2{margin-bottom:10px}
+.whatsapp a{display:block;background:#fff;color:#168c46;text-decoration:none;padding:15px;border-radius:10px;font-weight:bold;font-size:18px;margin-top:15px}
+footer{text-align:center;background:#111;color:#fff;padding:30px;margin-top:30px}
+@media(min-width:700px){
+.grid,.products{grid-template-columns:repeat(3,1fr)}
+.category{height:240px}
 }
 </style>
 </head>
@@ -425,466 +43,111 @@ padding:12px 5px;
 <body>
 
 <header>
-
-<div class="navbar">
-
-<div class="logo">
-<div class="logo-icon">JS</div>
-<span>Jersey Sport</span>
-</div>
-
-<div class="nav-actions">
-
-<button class="icon-btn" onclick="toggleSearch()">🔍</button>
-
-<button class="icon-btn cart-btn" onclick="toggleCart()">
-🛒
-<span class="cart-count" id="cartCount">0</span>
-</button>
-
-<button class="icon-btn">☰</button>
-
-</div>
-</div>
-
-<div class="search-box" id="searchBox">
-<input
-id="searchInput"
-type="text"
-placeholder="Cerca squadra o maglia..."
-oninput="searchProducts()">
-</div>
-
+<div class="logo">⚽ <span>JERSEY</span> SPORT</div>
+<div class="menu">☰</div>
 </header>
 
-
 <section class="hero">
-
 <h1>JERSEY SPORT</h1>
-
-<p>La tua passione. La tua maglia.</p>
-
-<a href="#collezioni" class="hero-btn">
-SCOPRI LE COLLEZIONI
-</a>
-
+<p>Scopri le nostre collezioni e trova la tua maglia.</p>
 </section>
 
+<div class="container">
 
-<main class="container">
+<h2>🏆 LE NOSTRE COLLEZIONI</h2>
 
-<h2 class="section-title" id="collezioni">
-🏆 COLLEZIONI
-</h2>
+<div class="grid">
 
-<div class="categories">
-
-<div class="category">
-<div class="category-image">⚽</div>
+<div class="card">
+<div class="category">⚽</div>
 <h3>CALCIO</h3>
 </div>
 
-<div class="category">
-<div class="category-image">🏀</div>
+<div class="card">
+<div class="category">🏀</div>
 <h3>BASKET</h3>
 </div>
 
-<div class="category">
-<div class="category-image">🏈</div>
-<h3>FOOTBALL</h3>
+<div class="card">
+<div class="category">🏈</div>
+<h3>FOOTBALL AMERICANO</h3>
 </div>
 
-<div class="category">
-<div class="category-image">🏎️</div>
-<h3>MOTORSPORT</h3>
+<div class="card">
+<div class="category">🏎️</div>
+<h3>FORMULA 1</h3>
+</div>
+
+<div class="card">
+<div class="category">🌍</div>
+<h3>NAZIONALI</h3>
+</div>
+
+<div class="card">
+<div class="category">👕</div>
+<h3>ALTRE COLLEZIONI</h3>
 </div>
 
 </div>
 
+<br><br>
 
-<h2 class="section-title">
-🔥 MAGLIE IN EVIDENZA
-</h2>
+<h2>🔥 LE NOSTRE MAGLIETTE</h2>
 
-
-<div class="products" id="products">
-
+<div class="products">
 
 <div class="product">
-
-<div class="product-image">⚽</div>
-
+<div class="product-img">⚽</div>
 <div class="product-info">
-
 <h3>Maglia Calcio</h3>
-
 <div class="price">€29,99</div>
-
-<div class="sizes">
-Taglie: S · M · L · XL
-</div>
-
-<button
-class="add-btn"
-onclick="addToCart('Maglia Calcio',29.99)">
-AGGIUNGI AL CARRELLO
-</button>
-
-<button
-class="whatsapp-btn"
-onclick="orderWhatsApp('Maglia Calcio',29.99)">
-ORDINA SU WHATSAPP
-</button>
-
+<div class="sizes">Taglie: S - M - L - XL</div>
+<button onclick="ordina('Maglia Calcio')">ORDINA SU WHATSAPP</button>
 </div>
 </div>
-
 
 <div class="product">
-
-<div class="product-image">👕</div>
-
+<div class="product-img">👕</div>
 <div class="product-info">
-
 <h3>Maglia Personalizzata</h3>
-
 <div class="price">€34,99</div>
-
-<div class="sizes">
-Taglie: S · M · L · XL · XXL
-</div>
-
-<button
-class="add-btn"
-onclick="addToCart('Maglia Personalizzata',34.99)">
-AGGIUNGI AL CARRELLO
-</button>
-
-<button
-class="whatsapp-btn"
-onclick="orderWhatsApp('Maglia Personalizzata',34.99)">
-ORDINA SU WHATSAPP
-</button>
-
+<div class="sizes">Taglie: S - M - L - XL</div>
+<button onclick="ordina('Maglia Personalizzata')">ORDINA SU WHATSAPP</button>
 </div>
 </div>
-
 
 <div class="product">
-
-<div class="product-image">🏀</div>
-
+<div class="product-img">🏆</div>
 <div class="product-info">
+<h3>Maglia Squadra</h3>
 
-<h3>Basket Jersey</h3>
-
-<div class="price">€32,99</div>
-
-<div class="sizes">
-Taglie: S · M · L · XL
-</div<
-
-<button
-
-  class="add-btn"
-onclick="addToCart('Basket Jersey',32.99)">
-AGGIUNGI AL CARRELLO
-</button>
-
-<button
-class="whatsapp-btn"
-onclick="orderWhatsApp('Basket Jersey',32.99)">
-ORDINA SU WHATSAPP
-</button>
-
-</div>
-</div>
-
-
-<div class="product">
-
-<div class="product-image">🏎️</div>
-
-<div class="product-info">
-
-<h3>Jersey Motorsport</h3>
-
-<div class="price">€39,99</div>
-
-<div class="sizes">
-Taglie: S · M · L · XL · XXL
-</div>
-
-<button
-class="add-btn"
-onclick="addToCart('Jersey Motorsport',39.99)">
-AGGIUNGI AL CARRELLO
-</button>
-
-<button
-class="whatsapp-btn"
-onclick="orderWhatsApp('Jersey Motorsport',39.99)">
-ORDINA SU WHATSAPP
-</button>
-
+  <div class="price">€29,99</div>
+<div class="sizes">Taglie: S - M - L - XL</div>
+<button onclick="ordina('Maglia Squadra')">ORDINA SU WHATSAPP</button>
 </div>
 </div>
 
 </div>
 
-</main>
-
-
-<div class="cart-panel" id="cartPanel">
-
-<div class="cart-header">
-
-<h2>🛒 Carrello</h2>
-
-<button class="close" onclick="toggleCart()">×</button>
-
+<div class="whatsapp">
+<h2>📲 ORDINA COME PREFERISCI</h2>
+<p>Puoi ordinare direttamente dal sito oppure contattarci su WhatsApp.</p>
+<a href="https://wa.me/393513438336" target="_blank">💬 ORDINA SU WHATSAPP</a>
 </div>
 
-<div id="cartItems"></div>
-
-<div class="cart-total">
-Totale: €<span id="cartTotal">0.00</span>
 </div>
-
-<button class="checkout" onclick="checkout()">
-ORDINA DAL SITO
-</button>
-
-<button class="checkout-whatsapp" onclick="cartWhatsApp()">
-ORDINA SU WHATSAPP
-</button>
-
-</div>
-
 
 <footer>
-
-<h2>JERSEY SPORT</h2>
-
-<p>Maglie sportive e personalizzate</p>
-
-<p>📱 WhatsApp: 3513438336</p>
-
 <p>©️ 2026 Jersey Sport</p>
-
+<p>Maglie sportive e personalizzate</p>
 </footer>
 
-
 <script>
-
-let cart=[];
-
-
-function toggleSearch(){
-
-const box=document.getElementById("searchBox");
-
-box.style.display=
-box.style.display==="block"
-?"none"
-:"block";
-
+function ordina(prodotto){
+const numero="393513438336";
+const messaggio="Ciao! Vorrei ordinare: "+prodotto;
+window.open("https://wa.me/"+numero+"?text="+encodeURIComponent(messaggio),"_blank");
 }
-
-
-function toggleCart(){
-
-document
-.getElementById("cartPanel")
-.classList.toggle("open");
-
-}
-
-
-function addToCart(name,price){
-
-cart.push({
-name:name,
-price:price
-});
-
-updateCart();
-
-alert("Aggiunto al carrello 🛒");
-
-}
-
-
-function removeItem(index){
-
-cart.splice(index,1);
-
-updateCart();
-
-}
-
-
-function updateCart(){
-
-document.getElementById("cartCount").textContent=cart.length;
-
-const items=document.getElementById("cartItems");
-
-if(cart.length===0){
-
-items.innerHTML=
-'<div class="empty">Il carrello è vuoto</div>';
-
-document.getElementById("cartTotal").textContent="0.00";
-
-return;
-
-}
-
-items.innerHTML="";
-
-let total=0;
-
-cart.forEach((item,index)=>{
-
-total+=item.price;
-
-items.innerHTML+=`
-
-<div class="cart-item">
-
-<strong>${item.name}</strong>
-
-€${item.price.toFixed(2)}
-
-<br>
-
-<button
-class="remove-btn"
-onclick="removeItem(${index})">
-Rimuovi
-</button>
-
-</div>
-
-`;
-
-});
-
-document.getElementById("cartTotal").textContent=
-total.toFixed(2);
-
-}
-
-
-function orderWhatsApp(name,price){
-
-const message=
-"Ciao Jersey Sport!%0A%0A"+
-"Vorrei ordinare:%0A"+
-"👕 "+name+"%0A"+
-"💶 Prezzo: €"+price.toFixed(2)+"%0A%0A"+
-"Vorrei sapere disponibilità e taglie.";
-
-window.open(
-"https://wa.me/393513438336?text="+message,
-"_blank"
-);
-
-}
-
-
-function cartWhatsApp(){
-
-if(cart.length===0){
-
-alert("Il carrello è vuoto.");
-
-return;
-
-}
-
-let message=
-"Ciao Jersey Sport!%0A%0A"+
-"Vorrei ordinare:%0A";
-
-let total=0;
-
-cart.forEach(item=>{
-
-message+=
-"👕 "+item.name+
-" - €"+item.price.toFixed(2)+
-"%0A";
-
-total+=item.price;
-
-});
-
-message+=
-"%0A💶 Totale: €"+
-total.toFixed(2)+
-"%0A%0A"+
-"Vorrei completare l'ordine.";
-
-window.open(
-"https://wa.me/393513438336?text="+message,
-"_blank"
-);
-
-}
-
-
-function checkout(){
-
-if(cart.length===0){
-
-alert("Il carrello è vuoto.");
-
-return;
-
-}
-
-alert(
-"Ordine dal sito selezionato! 🛒\n\n"+
-"Qui aggiungeremo il modulo con:\n"+
-"Nome\n"+
-"Indirizzo\n"+
-"Taglia\n"+
-"Numero di telefono\n"+
-"Metodo di pagamento"
-);
-
-}
-
-
-function searchProducts(){
-
-const search=
-document.getElementById("searchInput")
-.value
-.toLowerCase();
-
-const products=
-document.querySelectorAll(".product");
-
-products.forEach(product=>{
-
-const text=
-product.textContent.toLowerCase();
-
-product.style.display=
-text.includes(search)
-?"block"
-:"none";
-
-});
-
-}
-
-
-updateCart();
-
 </script>
 
 </body>
