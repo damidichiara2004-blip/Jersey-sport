@@ -1,1 +1,378 @@
+```html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jersey Sport | Maglie Sportive</title>
+  <meta name="description" content="Jersey Sport - Maglie da calcio, basket e sport. Scopri la nostra collezione.">
+  <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+
+      <a href="index.html" class="logo">
+        <span class="logo-crown">♛</span>
+        <span class="logo-text">JERSEY</span>
+        <span class="logo-sport">SPORT</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+
+      <nav class="menu" id="menu">
+        <a href="index.html" class="active">Home</a>
+        <a href="prodotti.html">Prodotti</a>
+        <a href="contatti.html">Contatti</a>
+        <a href="carrello.html" class="cart-link">
+          🛒 Carrello
+          <span id="cartCount">0</span>
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+
+        <div class="hero-badge">⚡ JERSEY SPORT ⚡</div>
+
+        <h1>
+          LA TUA PASSIONE.<br>
+          <span>LA TUA MAGLIA.</span>
+        </h1>
+
+        <p>
+          Scopri le migliori maglie sportive e porta in campo
+          lo stile della tua squadra.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="prodotti.html" class="btn btn-primary">
+            SCOPRI I PRODOTTI
+          </a>
+
+          <a href="#categorie" class="btn btn-secondary">
+            SCOPRI DI PIÙ
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CATEGORIE -->
+    <section class="categories" id="categorie">
+      <div class="container">
+
+        <div class="section-title">
+          <span>LE NOSTRE CATEGORIE</span>
+          <h2>SCEGLI IL TUO SPORT</h2>
+          <p>Trova la maglia perfetta per te.</p>
+        </div>
+
+        <div class="category-grid">
+
+          <a href="prodotti.html?categoria=calcio" class="category-card football">
+            <div class="category-icon">⚽</div>
+            <h3>CALCIO</h3>
+            <p>Maglie e divise da calcio</p>
+            <span>SCOPRI →</span>
+          </a>
+
+          <a href="prodotti.html?categoria=basket" class="category-card basketball">
+            <div class="category-icon">🏀</div>
+            <h3>BASKET</h3>
+            <p>Jersey da basket</p>
+            <span>SCOPRI →</span>
+          </a>
+
+          <a href="prodotti.html?categoria=sport" class="category-card sport">
+            <div class="category-icon">🏆</div>
+            <h3>SPORT</h3>
+            <p>Abbigliamento sportivo</p>
+            <span>SCOPRI →</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PRODOTTI IN EVIDENZA -->
+    <section class="featured">
+      <div class="container">
+
+        <div class="section-title">
+          <span>JERSEY SPORT</span>
+          <h2>IN EVIDENZA</h2>
+          <p>Le nostre maglie più richieste.</p>
+        </div>
+
+        <div class="products-grid">
+
+          <article class="product-card">
+            <div class="product-image">
+              <div class="shirt-placeholder">⚽</div>
+              <span class="product-badge">TOP</span>
+            </div>
+
+            <div class="product-info">
+              <h3>Jersey Sport 10</h3>
+              <p class="product-category">Calcio</p>
+              <div class="product-bottom">
+                <strong>€39,90</strong>
+                <button
+                  class="add-cart"
+                  data-name="Jersey Sport 10"
+                  data-price="39.90">
+                  +
+                </button>
+              </div>
+            </div>
+            </article>
+
+
+          <article class="product-card">
+            <div class="product-image">
+              <div class="shirt-placeholder">🏀</div>
+              <span class="product-badge">NEW</span>
+            </div>
+
+            <div class="product-info">
+              <h3>Jersey Basket</h3>
+              <p class="product-category">Basket</p>
+              <div class="product-bottom">
+                <strong>€44,90</strong>
+                <button
+                  class="add-cart"
+                  data-name="Jersey Basket"
+                  data-price="44.90">
+                  +
+                </button>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="product-card">
+            <div class="product-image">
+              <div class="shirt-placeholder">🏆</div>
+              <span class="product-badge">HOT</span>
+            </div>
+
+            <div class="product-info">
+              <h3>Jersey Premium</h3>
+              <p class="product-category">Sport</p>
+              <div class="product-bottom">
+                <strong>€49,90</strong>
+                <button
+                  class="add-cart"
+                  data-name="Jersey Premium"
+                  data-price="49.90">
+                  +
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="center-button">
+          <a href="prodotti.html" class="btn btn-primary">
+            VEDI TUTTI I PRODOTTI
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PERCHÉ JERSEY SPORT -->
+    <section class="why-us">
+      <div class="container">
+
+        <div class="section-title">
+          <span>PERCHÉ SCEGLIERE NOI</span>
+          <h2>JERSEY SPORT</h2>
+        </div>
+
+        <div class="features">
+
+          <div class="feature">
+            <div class="feature-icon">🚚</div>
+            <h3>SPEDIZIONE VELOCE</h3>
+            <p>Prepariamo e spediamo il tuo ordine rapidamente.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🔒</div>
+            <h3>PAGAMENTI SICURI</h3>
+            <p>I tuoi acquisti vengono gestiti in modo sicuro.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">⭐</div>
+            <h3>QUALITÀ</h3>
+            <p>Prodotti scelti per gli appassionati di sport.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">💬</div>
+            <h3>ASSISTENZA</h3>
+            <p>Siamo disponibili per aiutarti con i tuoi ordini.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+      <div class="container">
+
+        <div class="cta-content">
+          <span>SEI PRONTO?</span>
+          <h2>INDOSSA LA TUA PASSIONE.</h2>
+          <p>
+            Scopri la collezione Jersey Sport e trova la tua prossima maglia.
+          </p>
+
+          <a href="prodotti.html" class="btn btn-primary">
+            ACQUISTA ORA
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-crown">♛</span>
+            <span class="logo-text">JERSEY</span>
+            <span class="logo-sport">SPORT</span>
+          </a>
+
+          <p>
+            La tua passione per lo sport,
+            il tuo stile, la tua maglia.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>LINK</h3>
+          <a href="index.html">Home</a>
+          <a href="prodotti.html">Prodotti</a>
+          <a href="contatti.html">Contatti</a>
+          <a href="carrello.html">Carrello</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>INFO</h3>
+          <a href="contatti.html">Assistenza</a>
+          <a href="contatti.html">Spedizioni</a>
+          <a href="contatti.html">Contatti</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>SEGUICI</h3>
+          <a href="#" target="_blank">TikTok</a>
+          <a href="#" target="_blank">Instagram</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>©️ 2026 Jersey Sport. Tutti i diritti riservati.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+
+  <script>
+    /* Menu mobile */
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+
+    if (menuBtn && menu) {
+      menuBtn.addEventListener("click", function () {
+        menu.classList.toggle("open");
+      });
+    }
+
+    /* Carrello */
+    let cart = JSON.parse(localStorage.getItem("jerseyCart")) || [];
+
+    function updateCartCount() {
+      const cartCount = document.getElementById("cartCount");
+
+      if (cartCount) {
+        cartCount.textContent = cart.reduce(
+          (total, item) => total + (item.quantity || 1),
+          0
+        );
+      }
+    }
+
+    document.querySelectorAll(".add-cart").forEach(button => {
+      button.addEventListener("click", function () {
+
+        const name = this.dataset.name;
+        const price = parseFloat(this.dataset.price);
+
+        const existing = cart.find(item => item.name === name);
+
+        if (existing) {
+          existing.quantity = (existing.quantity || 1) + 1;
+        } else {
+          cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+          });
+        }
+
+        localStorage.setItem("jerseyCart", JSON.stringify(cart));
+        updateCartCount();
+
+        const originalText = this.textContent;
+        this.textContent = "✓";
+
+        setTimeout(() => {
+          this.textContent = originalText;
+        }, 1000);
+      });
+    });
+
+    updateCartCount();
+  </script>
+
+</body>
+</html>
+```
