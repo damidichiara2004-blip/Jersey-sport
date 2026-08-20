@@ -1,1 +1,420 @@
+```html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti | Jersey Sport</title>
+  <link rel="stylesheet" href="style.css">
 
+  <style>
+    .contact-page {
+      padding: 70px 0 100px;
+      min-height: 80vh;
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .contact-header span {
+      color: #00e5ff;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .contact-header h1 {
+      margin-top: 10px;
+      font-size: clamp(38px, 6vw, 65px);
+      font-weight: 1000;
+    }
+
+    .contact-header p {
+      max-width: 600px;
+      margin: 15px auto 0;
+      color: #9999a6;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .contact-card {
+      padding: 35px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      background: #101018;
+    }
+
+    .contact-card h2 {
+      margin-bottom: 10px;
+      font-size: 25px;
+    }
+
+    .contact-card > p {
+      margin-bottom: 25px;
+      color: #9999a6;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 17px;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 10px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .contact-icon {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: rgba(123,44,255,.15);
+      font-size: 22px;
+    }
+
+    .contact-item small {
+      display: block;
+      margin-bottom: 3px;
+      color: #777783;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .contact-item strong {
+      color: white;
+      font-size: 15px;
+    }
+
+    .whatsapp-card {
+      border-color: rgba(37,211,102,.25);
+      background:
+        radial-gradient(circle at 80% 20%, rgba(37,211,102,.12), transparent 35%),
+        #101018;
+    }
+
+    .whatsapp-icon {
+      width: 75px;
+      height: 75px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      font-size: 38px;
+    }
+
+    .whatsapp-button {
+      display: inline-flex;
+      width: 100%;
+      margin-top: 10px;
+      border: 0;
+      background: #25d366;
+      color: white;
+      text-align: center;
+    }
+
+    .whatsapp-button:hover {
+      background: #1ebe5d;
+      transform: translateY(-3px);
+    }
+
+    .contact-form {
+      margin-top: 25px;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 7px;
+      color: #aaaab5;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin-bottom: 17px;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 9px;
+      outline: none;
+      background: #08080e;
+      color: white;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    .contact-form input {
+      height: 48px;
+    }
+
+    .contact-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #00e5ff;
+    }
+
+    .contact-form button {
+      width: 100%;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .back-home {
+      display: flex;
+      width: fit-content;
+      margin: 40px auto 0;
+    }
+
+    @media (max-width: 750px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container nav">
+
+    <a href="index.html" class="logo">
+      <span class="logo-crown">♛</span>
+      <span class="logo-text">JERSEY</span>
+      <span class="logo-sport">SPORT</span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <nav class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="prodotti.html">Prodotti</a>
+      <a href="contatti.html" class="active">Contatti</a>
+      <a href="carrello.html" class="cart-link">
+        🛒 Carrello
+        <span id="cartCount">0</span>
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+
+<main class="contact-page">
+
+  <div class="container">
+
+    <div class="contact-header">
+      <span>JERSEY SPORT</span>
+      <h1>CONTATTACI</h1>
+      <p>
+        Hai bisogno di informazioni su prodotti, taglie o ordini?
+        Scrivici e ti risponderemo.
+      </p>
+    </div>
+
+
+    <div class="contact-grid">
+
+      <section class="contact-card whatsapp-card">
+
+        <div class="whatsapp-icon">☎</div>
+
+        <h2>ORDINA SU WHATSAPP</h2>
+
+        <p>
+          Per ordinare puoi contattarci direttamente su WhatsApp.
+          Ti aiuteremo con prodotto, taglia e ordine.
+        </p>
+
+        <a
+          href="https://wa.me/393513438336"
+          target="_blank"
+          class="btn whatsapp-button">
+          💬 SCRIVICI SU WHATSAPP
+        </a>
+
+        <div class="contact-info" style="margin-top:25px;">
+
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <small>WhatsApp</small>
+              <strong>351 343 8336</strong>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section class="contact-card">
+
+        <h2>INVIACI UN MESSAGGIO</h2>
+
+        <p>
+          Compila il modulo e il messaggio verrà preparato
+          direttamente su WhatsApp.
+        </p>
+
+        <form class="contact-form" id="contactForm">
+
+          <label for="name">Nome</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Il tuo nome"
+            required
+          >
+
+          <label for="message">Messaggio</label>
+          <textarea
+            id="message"
+            placeholder="Scrivi qui la tua richiesta..."
+            required
+          ></textarea>
+
+          <button type="submit" class="btn btn-primary">
+            INVIA SU WHATSAPP
+          </button>
+
+        </form>
+
+      </section>
+
+    </div>
+
+
+    <a href="prodotti.html" class="btn btn-secondary back-home">
+      ← VAI AI PRODOTTI
+    </a>
+
+  </div>
+
+</main>
+
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+
+        <a href="index.html" class="logo">
+          <span class="logo-crown">♛</span>
+          <span class="logo-text">JERSEY</span>
+          <span class="logo-sport">SPORT</span>
+        </a>
+
+        <p>
+          La tua passione per lo sport,
+          il tuo stile, la tua maglia.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+        <h3>LINK</h3>
+        <a href="index.html">Home</a>
+        <a href="prodotti.html">Prodotti</a>
+        <a href="contatti.html">Contatti</a>
+        <a href="carrello.html">Carrello</a>
+      </div>
+
+
+      <div class="footer-column">
+        <h3>INFO</h3>
+        <a href="contatti.html">Assistenza</a>
+        <a href="contatti.html">Spedizioni</a>
+        <a href="contatti.html">Contatti</a>
+      </div>
+
+
+      <div class="footer-column">
+        <h3>SOCIAL</h3>
+        <a href="#">TikTok</a>
+        <a href="#">Instagram</a>
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+      <p>©️ 2026 Jersey Sport. Tutti i diritti riservati.</p>
+
+      </div>
+
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  updateCartCount();
+
+  const form = document.getElementById("contactForm");
+
+  if (form) {
+    form.addEventListener("submit", function (event) {
+
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !message) {
+        alert("Compila tutti i campi.");
+        return;
+      }
+
+      const text =
+        "Ciao Jersey Sport! 👋\n\n" +
+        "Nome: " + name + "\n\n" +
+        "Messaggio:\n" + message;
+
+      const url =
+        "https://wa.me/393513438336?text=" +
+        encodeURIComponent(text);
+
+      window.open(url, "_blank");
+    });
+  }
+
+});
+</script>
+
+</body>
+</html>
+```
